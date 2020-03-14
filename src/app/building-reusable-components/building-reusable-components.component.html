@@ -16,29 +16,104 @@
         <div class="row">
             <div class="col-sm-1"></div>
             <div class="col-sm-2">
-                <a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="property-binding">Property Binding</a>
+                <a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="component-api"> Component<br> API</a>
             </div>
             <div class="col-sm-2">
-                <a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="attribute-binding">Attribute Binding</a>
+                <a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="input-properties"> Input
+                    <br>Properties</a>
             </div>
             <div class="col-sm-2">
-                <a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="class-binding">Class Binding</a>
+                <a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="aliasing-input-properties">Aliasing <br>
+                    Input Properties</a>
             </div>
             <div class="col-sm-2">
-                <a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="style-binding">Style Binding</a>
+                <a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="output-properties">Output <br>
+                    Properties</a>
             </div>
             <div class="col-sm-2">
-                <a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="event-binding">Event Binding</a>
+                <a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="passing-event-data">Passing <br> Event
+                    Data</a>
             </div>
             <div class="col-sm-1"></div>
         </div>
-        <br><br>
+        <br>
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-2">
+                <a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="aliasing-output-properties">Aliasing <br>Output Properties</a>
+            </div>
+            <div class="col-sm-2">
+                <a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="templates"><br>Templates</a>
+            </div>
+            <div class="col-sm-2">
+                <a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="styles"><br>Styles</a>
+            </div>
+            <div class="col-sm-2">
+                <a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="vie-encapsulation">View<br>Encapsulation</a>
+            </div>
+            <div class="col-sm-2">
+                <a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="app-ng-content"><br>ngContent</a>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-2">
+                <a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="app-ng-container"><br>ngContainer</a>
+            </div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-1"></div>
+        </div>
+        <br>
     </div>
     <br>
-    <br>
 </div>
-<div id="property-binding"></div>
-<property-binding></property-binding>
+<div id="component-api"></div>
+<component-api></component-api>
+<a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="top">Volver</a>
+<br>
+<div id="input-properties"></div>
+<input-properties [name]="'Juan'" [age]="20"></input-properties>
+<a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="top">Volver</a>
+<br>
+<div id="aliasing-input-properties"></div>
+<aliasing-input-properties></aliasing-input-properties>
+<a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="top">Volver</a>
+<br>
+<div id="output-properties"></div>
+<output-properties></output-properties>
+<a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="top">Volver</a>
+<br>
+<div id="passing-event-data"></div>
+<passing-event-data></passing-event-data>
+<a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="top">Volver</a>
+<br>
+<div id="aliasing-output-properties"></div>
+<aliasing-output-properties></aliasing-output-properties>
+<a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="top">Volver</a>
+<br>
+<div id="templates"></div>
+<templates></templates>
+<a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="top">Volver</a>
+<br>
+<div id="styles"></div>
+<styles></styles>
+<a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="top">Volver</a>
+<br>
+<div id="view-encapsulation"></div>
+<view-encapsulation></view-encapsulation>
+<a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="top">Volver</a>
+<br>
+<div id="app-ng-content"></div>
+<app-ng-content></app-ng-content>
+<a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="top">Volver</a>
+<br>
+<div id="app-ng-container"></div>
+<app-ng-container></app-ng-container>
 <a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="top">Volver</a>
 <br>
 <br>

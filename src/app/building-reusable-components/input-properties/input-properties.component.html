@@ -1,0 +1,51 @@
+<br />
+<br />
+<br />
+<div class="jumbotron">
+  <h1>Input Properties</h1>
+  <p>Son los datos de entrada o de State que tendra nuestro componente.</p>
+</div>
+<p>
+  En el sisguiente ejemplo las propiedades Name y Age se pasan al componente de la siguiente manera:
+</p>
+<code>
+  &lt;input-properties [name]="'Juan'" [age]="20"&gt;&lt;/input-properties&gt;
+  </code>
+<br>
+<br>
+<div class="row">
+  <div class="col-sm-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">Edit</div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-sm-2">Name</div>
+          <div class="col-sm-9">
+            <input #nameData type="text" [value]="name" (keyup)="onNameChange(nameData.value)" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2">Age</div>
+          <div class="col-sm-9">
+            <input #ageData type="number" [value]="age" (keyup)="onAgeChange(ageData.value)" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">Info</div>
+      <div class="panel-body">
+        Name: {{name}}
+        <br>
+        Age: {{age}}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="alert alert-info" [innerHtml]="log" [style.height]="'150px'" [style.overflow]="'scroll'">
+  </div>
+</div>
+<br><br>

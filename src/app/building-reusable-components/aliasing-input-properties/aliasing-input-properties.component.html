@@ -1,0 +1,18 @@
+<br />
+<br />
+<br />
+<div class="jumbotron">
+  <h1>Aliasing Input Properties</h1>
+  <p>Es ponerle un Alias al input properties.
+  </p>
+</div>
+<p [style.font-size]="'16px'">
+  El alias se agrega como un string dentro del Decorator <code>@Input('alias')</code>, al momento de declara la
+  propiedad.
+  <br>
+  <br>
+  Es util poner alias cuando por motivos de refactoring cambiamos los nombres de las variables. Al tener un alias el
+  nombre queda igual en el componente padre donde estamos ingresando valores a esta propiedad, por ende son menos
+  lugares donde tenemos que cambiar datos.
+</p>
+<br><br>

@@ -1,0 +1,32 @@
+<br />
+<br />
+<br />
+<div class="jumbotron">
+  <h1>Component API</h1>
+  <p>Básicamente es que cosa pueden enviarle a tu component y que cosas están expuestas de tu componente. Es como crear
+    properties para tu componente, en un componente no se pueden usar poperties igual que en los HTML tags así que es
+    necesario crearlas, a todo ese conjunto se le conoce como Component API.</p>
+</div>
+<div [style.font-size]="'16px'">
+  <strong>Ejemplo:</strong>
+  <br>
+  <code>
+    &lt; curso [isActive]="isActive" (change)="onCursoChange()"&gt;&lt;/curso&gt;
+  </code>
+  <br>
+  <br>
+  <p>
+    <strong>Componente:</strong> Para hacer a un componente reutilizable necesitamos usar inputs y outputs properties.
+    <br>
+    <ul>
+      <li><strong>Input:</strong> Usamos inputs properties para pasarle datos de entrada o de State al componente.</li>
+      <li><strong>Output:</strong> Usamos output properties para lanzar eventos.</li>
+    </ul>
+    <br>
+    <p>
+      Input & Output properties son la API publica del componente.
+
+    </p>
+</div>
+<br>
+<br>
