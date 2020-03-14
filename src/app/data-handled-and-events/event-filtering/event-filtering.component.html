@@ -1,0 +1,21 @@
+<br />
+<br />
+<br />
+<div class="jumbotron">
+  <h1>Event Filtering</h1>
+  <p>Enlaza un evento filtrado a un metodo del componente.  Evento filtrado ejemplo cuando se presione el boton enter.</p>
+</div>
+<br>
+keyup.Enter event
+<input class="col-lg-12" (keyup.Enter)="onKeyPress()"/>
+<br>
+keyup.x event with parameters
+<input class="col-lg-12" (keyup.x)="onKeyPressParameters($event)"/>
+<br>
+<br>
+<br>
+<button class="btn btn-default" (click)="clearLog()">
+    Clear Log
+</button>
+<div class="alert alert-info" [innerHtml]="log" [style.height]="'250px'" [style.overflow]="'scroll'">
+</div>

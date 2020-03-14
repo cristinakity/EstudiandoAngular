@@ -1,0 +1,29 @@
+<br />
+<br />
+<br />
+<div class="jumbotron">
+  <h1>Event Binding</h1>
+  <p>Enlaza un evento a un metodo del componente.</p>
+</div>
+<button class="btn" [class.btn-primary]="isPrimary" (click)="onClick()">
+    Clicks!!!
+</button>
+<br>
+<br>
+<p>
+    Numero de clicks: {{ clicks }}
+</p>
+<br>
+onKeyPress event
+<input class="col-lg-12" (keypress)="onKeyPress()"/>
+<br>
+onKeyPress event with parameters
+<input class="col-lg-12" (keypress)="onKeyPressParameters($event)"/>
+<br>
+<br>
+<br>
+<button class="btn btn-default" (click)="clearLog()">
+    Clear Log
+</button>
+<div class="alert alert-info" [innerHtml]="log" [style.height]="'250px'" [style.overflow]="'scroll'">
+</div>

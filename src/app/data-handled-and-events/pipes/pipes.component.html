@@ -1,0 +1,90 @@
+<br />
+<br />
+<br />
+<div class="jumbotron">
+  <h1>Pipes</h1>
+  <p>Son formatos que se le puden aplicar a variables al momento de mostrarlas en la vista.
+    <br> se utiliza el caracter pipe | seguido del tipo de Pipe que sera aplicado.
+  </p>
+</div>
+<br>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Original</th>
+      <th>Pipe</th>
+      <th>Results</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ customer.name }}</td>
+      <td>| uppercase</td>
+      <td>{{ customer.name | uppercase }}</td>
+    </tr>
+    <tr>
+      <td>{{ customer.name }}</td>
+      <td>| lowercase</td>
+      <td>{{ customer.name | lowercase }}</td>
+    </tr>
+    <tr>
+      <td>{{ customer.money }}</td>
+      <td>| currency</td>
+      <td>{{ customer.money | currency }}</td>
+    </tr>
+    <tr>
+      <td>{{ customer.money }}</td>
+      <td>| currency:'US':false</td>
+      <td>{{ customer.money | currency:'US':false }}</td>
+    </tr>
+    <tr>
+      <td>{{ customer.money }}</td>
+      <td>| currency:'MXN'</td>
+      <td>{{ customer.money | currency:'MXN' }}</td>
+    </tr>
+    <tr>
+      <td>{{ customer.height }}</td>
+      <td>| number </td>
+      <td>{{ customer.height | number  }}</td>
+    </tr>
+    <tr>
+      <td>{{ customer.height }}</td>
+      <td>| number:"1.0-0" </td>
+      <td>{{ customer.height | number:"1.0-0"  }}</td>
+    </tr>
+    <tr>
+      <td>{{ customer.height }}</td>
+      <td>| number:"2.0-0" </td>
+      <td>{{ customer.height | number:"2.0-0"  }}</td>
+    </tr>
+    <tr>
+      <td>{{ customer.height }}</td>
+      <td>| number:"1.1-1" </td>
+      <td>{{ customer.height | number:"1.1-1"  }}</td>
+    </tr>
+    <tr>
+      <td>{{ customer.height }}</td>
+      <td>| number:"1.1-2" </td>
+      <td>{{ customer.height | number:"1.1-2"  }}</td>
+    </tr>
+    <tr>
+      <td>{{ customer.birthday }}</td>
+      <td>| date: "shortDate"</td>
+      <td>{{ customer.birthday | date: "shortDate" }}</td>
+    </tr>
+    <tr>
+      <td>{{ customer.birthday }}</td>
+      <td>| date: "longDate"</td>
+      <td>{{ customer.birthday | date: "longDate" }}</td>
+    </tr>
+    <tr>
+      <td>{{ customer.birthday }}</td>
+      <td>| date: "yyyy/MM/dd"</td>
+      <td>{{ customer.birthday | date: "yyyy/MM/dd" }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+<br>
+<br>

@@ -1,0 +1,33 @@
+<br />
+<br />
+<br />
+<div class="jumbotron">
+  <h1>Style Binding</h1>
+  <p>Enlaza una variable del componente al style DOM</p>
+</div>
+<p [style.color]="'gray'">{{ text }}</p>
+<p [style.color]="successColor">{{ text }}</p>
+<p [style.color]="isSuccess ? successColor : dangerColor">{{ text }}</p>
+<p [style.color]="'pink'">{{ text }}</p>
+
+<img [attr.src]="imageLink" [title]="'width + %'" [style.width]="width + '%'"/>
+<img [src]="imageLink" [attr.title]="'width + px'" [style.width]="width + 'px'"/>
+<br>
+<br>
+<table class="table table-bordered">
+    <thead [style.backgroundColor]="theadBackgroundColor" [style.color]="'gray'" [style.font-size]="'30px'">
+        <tr>
+            <th [attr.colspan]="colSpan">Full Header</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Row 1 - Column 1 </td>
+            <td>Row 1 - Column 2 </td>
+        </tr>
+        <tr>
+            <td>Row 2 - Column 1 </td>
+            <td>Row 2 - Column 2 </td>
+        </tr>
+    </tbody>
+</table>

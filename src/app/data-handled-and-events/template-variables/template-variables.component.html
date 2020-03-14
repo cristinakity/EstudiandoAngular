@@ -1,0 +1,17 @@
+<br />
+<br />
+<br />
+<div class="jumbotron">
+  <h1>Template Variables</h1>
+  <p>Son varaibles creadas en el template #nombreVariable, se puesan pasar atraves de eventos al componente.</p>
+</div>
+Name:
+<input #name (keyup)="showFullName(name.value,lastName.value)"/>
+Last Name:
+<input #lastName (keyup)="showFullName(name.value,lastName.value)"/>
+<br>
+<br>
+Full Name: {{ fullName }}
+<br>
+<br>
+<br>

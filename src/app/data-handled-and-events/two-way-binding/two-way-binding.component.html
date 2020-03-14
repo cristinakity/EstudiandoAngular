@@ -1,0 +1,17 @@
+<br />
+<br />
+<br />
+<div class="jumbotron">
+  <h1>Two-way binding</h1>
+  <p>En two-way binding el componente puede modificar el DOM y viceversa, el DOM puede modificar la variable en el componente. <br/>
+    En este caso se usa Banana-box sintax [()], () = Banana, [  ] = Box
+    <br>
+    Un ejemplo de two-way binding es [(ngModel)], ngMode es parte de FormsModule dentro de @angular/forms
+  </p>
+</div>
+Data:
+<input [(ngModel)]="data" type="text"/>
+<br>
+<br>
+{{ data }}
+<br>

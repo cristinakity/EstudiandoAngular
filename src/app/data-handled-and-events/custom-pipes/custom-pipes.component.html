@@ -1,0 +1,36 @@
+<br />
+<br />
+<br />
+<div class="jumbotron">
+    <h1>Custom Pipes</h1>
+    <p>Son Pipes customizados o creados por el usuario.
+        <br>Son formatos que se le puden aplicar a variables al momento de mostrarlas en la vista.
+        <br> se utiliza el caracter pipe | seguido del tipo de Pipe que sera aplicado.
+    </p>
+    <div [style.font-size]="'19px'">
+        
+        <strong> Pasos para crear un custom pipe:</strong>
+        <ol>
+            <li>
+                ng g p nombreDelPipe
+            </li>
+            <li>
+                Se tiene que importar Pipe, PipeTranform de @angular/core ( al generarse con el comando esto se agrega automaticamente).
+            </li>
+            <li>
+                En el metodo transform ponemos la funcion de nuestro Custom Pipe
+            </li>
+            <li>
+                Agregar el pipe a app.module.ts 
+            </li>
+        </ol>
+    </div>
+</div>
+<h3>Texto con Custom Summary Pipe aplicado | summary</h3>
+<p>{{longText | summary }}</p>
+<br>
+<h3>Texto con Custom Summary Pipe aplicado | summary:200</h3>
+<p>{{longText | summary:200 }}</p>
+<br>
+<h3>Texto original</h3>
+<p>{{longText}}</p>

@@ -1,0 +1,31 @@
+<br />
+<br />
+<br />
+<div class="jumbotron">
+  <h1>Class Binding</h1>
+  <p>Valida si una clase sera agregada al attributo class del html.  Se usa class.nombre-clase = true, si el valor es true se agrega esa clase al atributo html class del html tag, si es falso no se agrega.</p>
+</div>
+<img [attr.src]="imageLink" [attr.title]="title" [attr.width]="width" [class.alert-danger]="isDanger"/>
+<br>
+<br>
+<p [textContent]="paragraphText" [class.inverseColors]="1"></p>
+<br>
+isBordered: {{ isBordered }}
+<br>
+<table class="table" [class.table-bordered]="isBordered">
+    <thead>
+        <tr>
+            <th [attr.colspan]="colSpan">Full Header</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Row 1 - Column 1 </td>
+            <td>Row 1 - Column 2 </td>
+        </tr>
+        <tr>
+            <td>Row 2 - Column 1 </td>
+            <td>Row 2 - Column 2 </td>
+        </tr>
+    </tbody>
+</table>
