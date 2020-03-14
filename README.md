@@ -1,4 +1,4 @@
-# Repaso
+# Repaso de los temas vistos en Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.3.
 
