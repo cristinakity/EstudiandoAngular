@@ -40,7 +40,8 @@
         <div class="row">
             <div class="col-sm-1"></div>
             <div class="col-sm-2">
-                <a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="aliasing-output-properties">Aliasing <br>Output Properties</a>
+                <a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="aliasing-output-properties">Aliasing
+                    <br>Output Properties</a>
             </div>
             <div class="col-sm-2">
                 <a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="templates"><br>Templates</a>
@@ -49,7 +50,8 @@
                 <a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="styles"><br>Styles</a>
             </div>
             <div class="col-sm-2">
-                <a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="vie-encapsulation">View<br>Encapsulation</a>
+                <a class="btn btn-lg btn-info" [routerLink]="['./']"
+                    fragment="vie-encapsulation">View<br>Encapsulation</a>
             </div>
             <div class="col-sm-2">
                 <a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="app-ng-content"><br>ngContent</a>
@@ -85,11 +87,22 @@
 <a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="top">Volver</a>
 <br>
 <div id="output-properties"></div>
-<output-properties></output-properties>
+<output-properties [name]="'Juan'" [age]="20" (change)="onOutputPropertyChange()"></output-properties>
+<p>Parent Log</p>
+<div class="row">
+    <div class="alert alert-info" [innerHtml]="log" [style.height]="'70px'" [style.overflow]="'scroll'">
+    </div>
+</div>
 <a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="top">Volver</a>
 <br>
 <div id="passing-event-data"></div>
-<passing-event-data></passing-event-data>
+<passing-event-data [isOn]="eventDataActualValue" (change)="onEventDataChange($event)"></passing-event-data>
+<h3>Parent data</h3>
+<p>
+    <br><strong>eventDataActualValue:</strong> {{eventDataActualValue}}
+    <br><strong>Button value:</strong> {{ eventDataActualValue ? "ON" : "OFF"  }}
+</p>
+<br>
 <a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="top">Volver</a>
 <br>
 <div id="aliasing-output-properties"></div>

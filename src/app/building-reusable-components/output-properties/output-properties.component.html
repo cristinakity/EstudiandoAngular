@@ -3,5 +3,58 @@
 <br />
 <div class="jumbotron">
   <h1>Output Properties</h1>
-  <p></p>
+  <p>Son propiedades de "salida" o eventos.</p>
+</div>
+<p>
+  Para poder tulizar los output debemos importar <code>Output</code> y <code>EventEmmiter</code> de <code>@angular/core</code>
+  y declara la propiedad de la siguiente manera: <br>
+  <code>@Output() change= new EventEmitter();</code>
+  <br>Al final se implementa emitter en el hijo en la parte donde queramos llamar al evento 
+  <br> <code>this.change.emit();</code>
+</p>
+<br>
+<p>
+  En el sisguiente ejemplo se agrega el evento change, el cual es un output property.
+  <br>El evento <code>onOutputPropertyChange()</code> se crea en el componente padre donde se esta usando 
+  <code>output-poroties</code>.
+</p>
+<code>
+  &lt;output-properties [name]="'Juan'" [age]="20" (change)="onOutputPropertyChange()" &gt;&lt;/output-properties&gt;
+  </code>
+<br>
+<br>
+<div class="row">
+  <div class="col-sm-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">Edit</div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-sm-2">Name</div>
+          <div class="col-sm-9">
+            <input #nameData type="text" [value]="name" (keyup)="onNameChange(nameData.value)" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2">Age</div>
+          <div class="col-sm-9">
+            <input #ageData type="number" [value]="age" (keyup)="onAgeChange(ageData.value)" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">Info</div>
+      <div class="panel-body">
+        Name: {{name}}
+        <br>
+        Age: {{age}}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="alert alert-info" [innerHtml]="log" [style.height]="'70px'" [style.overflow]="'scroll'">
+  </div>
 </div>

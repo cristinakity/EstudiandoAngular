@@ -3,5 +3,54 @@
 <br />
 <div class="jumbotron">
   <h1>Passing Event Data</h1>
-  <p></p>
+  <p>Podemos pasar datos desde el componente hijo al padre usando <code>$event</code>, para esto tenemos que definir que
+    tipo de dato sera $event</p>
 </div>
+<p>En el siguiente boton estamos usando la variable <code>isOn</code> de tipo <code>boolean</code> para saber si el
+  boton esta encendido o apagado. </p>
+<p>La variable <code>isOn</code> sera pasada como parametro para el evento <code>change</code> del componente,
+  <br><br>Recordemos que los eventos son Output properties y se declaran de la siguiente manera:
+  <br>
+  <code>
+    @Output() change = new EventEmitter();
+  </code>
+</p>
+<br>
+<p>Pasando el valor de <code>isOn</code> podremos saber en el componente padre si el boton esta encendido o apagado.</p>
+<p>Al hacer click en el boton llamamos tambien al Emit del evento Change y le pasamos la variable isOn
+<br><code>this.change.emit(this.isOn);</code>  
+</p>
+<p>
+  En el componente padre estamos declarando al componente hijo con las siguiente propiedades:
+  <br>
+  <code>
+  &lt;passing-event-data [isOn]="eventDataActualValue" (change)="onEventDataChange($event)"&gt;&lt;/passing-event-data&gt;
+</code>
+</p>
+<p>
+  En el componente padre declaramos el evento <code>onEventDataChange</code>:
+  <br>
+  <code>
+    onEventDataChange($event)&#123;
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;this.eventDataActualValue = $event;
+    <br> &#125;
+  </code>
+  <br>Este evento es el que se llama con la instruccion <code>.emit</code> del output property <code>change</code> que declaramos.
+  Este evento se crea en el padre y recibe como parametros <code>$event</code>, que en este caso es el valor de la variable <code>isOn</code>.
+</p>
+<p>
+  Se pueden pasar otros tipos de datos mas complejos, como interfaces, y no solo un valor.
+  <br><strong>Ejemplo:</strong>  
+  <br><code>this.change.emit(&#123;nombre:"Jhon", edad:26, phone:"234-43567"&#125;);</code> 
+  <br>Asi el valor de <code>$event</code> en este caso sera de un objeto con los siguientes campos
+  <br>&nbsp;&nbsp;&nbsp;&nbsp;<strong>nombre:</strong> string
+  <br>&nbsp;&nbsp;&nbsp;&nbsp;<strong>edad:</strong> number
+  <br>&nbsp;&nbsp;&nbsp;&nbsp;<strong>phone:</strong> string
+</p>
+<p>
+  <strong>isOn:</strong> {{isOn}}
+</p>
+<button class="btn" [class.btn-danger]="!isOn" [class.btn-success]="isOn" [textContent]="isOn ? 'ON' : 'OFF'"
+  (click)="onClick()"></button>
+<br>
+<br>
