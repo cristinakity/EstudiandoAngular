@@ -3,5 +3,23 @@
 <br />
 <div class="jumbotron">
   <h1>Templates</h1>
-  <p></p>
+  <p>Templates para los componentes. Template tecnicamente es la vista o View dentro de MVC, en angular template es codigo html en conjunto con angular code.</p>
 </div>
+<p>
+  Existen dos maneras de usar templates en un componente.
+</p>
+  <ol>
+    <li><strong>templateUrl:</strong> El template esta almacenado en un archivo externo. Se le asigna un string con la ruta de nuestro template .html</li>
+    <li><strong>template:</strong> Se agrega inline. Se puede usar un string <code>''</code>, o utlizar multilenas con las comillas invertidas <code>``</code></li>
+  </ol>
+  <p>
+    No es posible mezclar ambas propiedades del componente, se debe elejir <code>templateUrl</code> o  <code>template</code>.
+  </p>
+  <p>La eleccion que hagamos dependera del tipo de proyecto que estemos desarrollando, si el componente es algo muy simple y requiere un template simple es mejor utilizar inline template, en cambio si estamos desarrollando un componetne muy complejo sera mejor utilizar un template externo mdiante un archivo template html.</p>
+  <p>Elegir como usar el template en un componente depende de cada persona, lo escrito anteriormente es solo una recomendación. </p>
+  <p>
+    Cuando creamos el componente con CLI mediante el comando <code>ng g c componentName</code> por default siempre genera un template externo .html.
+  </p>
+  <br>
+  <br>
+  <br>

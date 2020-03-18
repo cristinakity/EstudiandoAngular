@@ -3,5 +3,44 @@
 <br />
 <div class="jumbotron">
   <h1>Styles</h1>
-  <p></p>
+  <p>Los styles son los estilos css que seran aplicados a cada elemento de nuestro compoenente.  El estilo representa la parte visual del componente, que color de fondo, que tipo de letra, que tamaño, que borde, etc.  Existen muchas propiedades para cambiar dentro de style.</p>
 </div>
+<p>
+  Existen tres maneras de usar styles en un componente.
+</p>
+  <ol>
+    <li><strong>styleUrls:</strong> Se agrega un array de styles externos: <code>['./style1.css','./style2.css']</code></li>
+    <li><strong>styles:</strong> Se agrega inline. Se puede agregar un array de style multilena con las comillas invertidas <code>``</code> y el contenido del style es como en un css.
+      <br><code>
+        [`
+        <br>body &#123;
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;color: black;
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;font-size: 14px;
+        <br>&#125;`
+        <br>`
+        <br>p &#123;
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;color: gray;
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;font-size: 13px;
+        <br>&#125;`
+        <br>]
+      </code>
+    </li>
+    <li><strong>inline in the hmlt template:</strong> Igual como se hace en cualquier html web.
+      <br><code>&lt;style&gt;
+        <br>body &#123;
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;color: black;
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;font-size: 14px;
+        <br>&#125;
+        <br>
+        &lt;/style&gt;</code>
+        <br>
+        <strong>*</strong> Esto seria considerado una mala practica de programacion, pero es una de las cosas que angular nos permite hacer al momdento de definir styles para nuestro componente.
+    </li>
+  </ol>
+  <p>
+    Es posible agregar <code>styleUrl</code> en conjunto con <code>styles</code> dentro de un componente, pero un estilo sobre-escribira a otro.  El que se haya declarado al final del componente sera el que tome efecto.
+  </p>
+  <p>Angular creara un scope para estos estilos, lo cual significa que solo funcionaran dentro del componente y no afectaran otros componentes.</p>
+  <br>
+  <br>
+  <br>

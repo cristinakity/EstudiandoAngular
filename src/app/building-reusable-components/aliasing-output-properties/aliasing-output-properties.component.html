@@ -3,5 +3,15 @@
 <br />
 <div class="jumbotron">
   <h1>Aliasing Output Properties</h1>
-  <p></p>
+  <p>Podemos usar Alias para mantener el contrato del componente estable. Si hacemos cambios en algun output propertie y este property tienes un alias, no sera necesario cambiar el output property en el padre.</p>
 </div>
+<p [style.font-size]="'16px'">
+  El alias se agrega como un string dentro del Decorator <code>@Output('alias')</code>, al momento de declara la
+  propiedad.
+  <br>
+  <br>
+  Es util poner alias cuando por motivos de refactoring cambiamos los nombres de las variables. Al tener un alias el
+  nombre queda igual en el componente padre donde estamos utilizando el evento, por ende son menos
+  lugares donde tenemos que cambiar datos.
+</p>
+<br><br>
