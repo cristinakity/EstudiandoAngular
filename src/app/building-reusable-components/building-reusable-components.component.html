@@ -135,7 +135,15 @@
 <a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="top">Volver</a>
 <br>
 <div id="app-ng-container"></div>
-<app-ng-container></app-ng-container>
+<app-ng-container>
+    <ng-container class="p1Heading">Panel 1</ng-container>
+    <ng-container class="p1Body">
+        <h5>Body</h5>
+        <p>
+            Este el el panel 1, dentro del boy se esta pasando HTML y no solo texto.
+        </p>
+    </ng-container>
+</app-ng-container>
 <a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="top">Volver</a>
 <br>
 <br>

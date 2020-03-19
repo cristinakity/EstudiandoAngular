@@ -3,5 +3,61 @@
 <br />
 <div class="jumbotron">
   <h1>ngContainer</h1>
-  <p></p>
+  <p>Sirve para pasar solo el contenido del selector al ng-content.  Esto significa que en el HTML no se creara tambien el elemento del selector.</p>
+</div>
+<p>
+  Los siguientes panels tienen definidos <code>ng-content</code> en el header y el body, el contenido de estos esta siendo asigando desde el componente padre.
+  <br>
+</p>
+  De este modo:
+  <ul>
+    <li><strong>En el hijo:</strong>
+      <br><code>&lt;ng-content selector=".p1Heading"&gt;&lt;/ng-content&gt;</code>
+      <br>Se crea el <code>ng-content</code> con un <code>selector</code> el cual se define como <code>queryStrings</code>(. para clases, # para id, etc.).
+      <br>Al definir un selector; En el componente padre se creara un elemento que tenga el mismo queryString que el selector, de este modo ese elemento sera el contenido de nuestro <code>ng-content</code>.
+    </li>
+    <li><strong>En el padre:</strong>
+      <br>Solo pasamos el contenido dentro de elementos que coincidan con el selector del ng-content.
+      <br>
+      <code>
+      &lt;app-ng-container&gt;
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;ng-container class="p1Heading"&gt;Panel 1&lt;/ng-container&gt;
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;ng-container class="p1Body"&gt;
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h5&gt;Body&lt;/h5&gt;
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Este el el panel 1, dentro del boy se esta pasando HTML y no solo texto.
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/p&gt;
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ng-container&gt;
+      <br>  &lt;/app-ng-container&gt;
+      </code>
+    </li>
+  </ul>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <ng-content selector=".p1Heading"></ng-content> 
+      </div>
+      <div class="panel-body">
+        <ng-content select=".p1Body"></ng-content>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <p>
+      <code>
+      &lt;div _ngcontent-ofx-c72="" class="panel panel-default"&gt;
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;div _ngcontent-ofx-c72="" class="panel-heading"&gt;Panel 1
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--ng-container--&gt;
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;div _ngcontent-ofx-c72="" class="panel-body"&gt;
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h5 _ngcontent-ofx-c73=""&gt;Body&lt;/h5&gt;
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p _ngcontent-ofx-c73=""&gt; Este el el panel 1, dentro del boy se esta pasando HTML y no solo texto. &lt;/p&gt;
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--ng-container--&gt;
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+      <br>&lt;/div&gt;
+    </code>
+    </p>
+  </div>
+  <p><strong>*</strong> ng-container paso solamente el codigo dentro de el y no el propio selector como en ng-content.</p>
 </div>
