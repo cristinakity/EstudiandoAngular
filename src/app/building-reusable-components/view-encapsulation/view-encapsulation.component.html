@@ -5,3 +5,49 @@
   <h1>View Encapsulation</h1>
   <p></p>
 </div>
+<p>Para explicar view encapsulation en Angular es necesario explicar antes el concepto de Shawod DOM.</p>
+<h3>Shadow DOM</h3>
+<p>
+  Nos permite aplicar <strong>scoped styles</strong> a elementos. Es una especificacion que habilita el arbol de estilos
+  del DOM.
+</p>
+<p>
+  Es algo relativamente nuevo y no funciona en versiones mas viejas de los browsers.
+</p>
+<p>Cuando creamos estilos como por ejemplo:
+  <br><code>
+    h1&#123;
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;color:red;
+    <br>&#125;
+  </code>
+  <br>Y no queremos que se progame en TODA nuestra aplicacion, osea queremos que solo el <code>h1</code> que estamos
+  definiendo en este scope de estilo tenga texto color rojo.
+  <br>Si se habilita, aqui es donde el Shadow DOM hace su magia.
+</p>
+<p>
+  Para ver mas sobre como utlizar y como funciona shadow DOM has click <a
+    href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM" target="_blank"
+    rel="noopener noreferrer">aqui</a>.
+</p>
+<h3>encapsulation</h3>
+<p>
+  En Angular Component tenemos la propiedad <code>encapsulation</code>, en la cual el valor por default es
+  <code>emulated</code>.
+  <br>Esta propiedad nos permite definir el tipo de <strong>shadow DOM</strong> que utilizara Angular para el
+  componente.
+  <br>El valor de <code>encapsulation</code> es de tipo <code>ViewEncapsulation</code>, el cual es un <code>enum</code>
+  definido en <code>@angular/core</code>
+
+</p>
+<br>
+<h4>ViewEncapsulation</h4>
+<ol>
+  <li><strong>Emulated</strong>: Angular crea su propio ambiente de shadow DOM emulado, le asigna tipo alias a los styles para poderlos definir como unicos.
+    <br>Este tipo de encapsulamiento es el que angular asigna por default y el recomendado para usar, ya que como no todos los browser soporta Shadow DOM con esta opcion Angular creara una emulacion del Shadow DOM permitiendonos tener esta funcionalidad en browsers que no soportan Shadow DOM.
+  </li>
+  <li><strong>Native</strong>: Angular usara el Shadow DOM igual que en Javascript.
+    <br>Desventaja de usar este tipo es que no sera soportado en todos los browsers o en todas sus versiones.
+  </li>
+  <li><strong>None</strong>: No se usara ningun tipo de Shadow DOM o encapsulamiento, osea que estos estilos se propagaran en toda la aplicacion.
+  </li>
+</ol>

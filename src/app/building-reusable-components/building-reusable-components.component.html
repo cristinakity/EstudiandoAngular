@@ -50,8 +50,7 @@
                 <a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="styles"><br>Styles</a>
             </div>
             <div class="col-sm-2">
-                <a class="btn btn-lg btn-info" [routerLink]="['./']"
-                    fragment="vie-encapsulation">View<br>Encapsulation</a>
+                <a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="view-encapsulation">View<br>Encapsulation</a>
             </div>
             <div class="col-sm-2">
                 <a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="app-ng-content"><br>ngContent</a>
@@ -122,7 +121,17 @@
 <a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="top">Volver</a>
 <br>
 <div id="app-ng-content"></div>
-<app-ng-content></app-ng-content>
+<app-ng-content>
+    <div class="p1Heading">Panel 1</div>
+    <div class="p1Body">
+        <h5>
+            Body
+        </h5>
+        <p>
+            Este el el panel 1, dentro del body se esta pasando HTML y no solo texto.
+        </p>
+    </div>
+</app-ng-content>
 <a class="btn btn-lg btn-info" [routerLink]="['./']" fragment="top">Volver</a>
 <br>
 <div id="app-ng-container"></div>

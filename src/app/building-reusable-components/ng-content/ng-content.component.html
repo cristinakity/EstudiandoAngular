@@ -3,5 +3,47 @@
 <br />
 <div class="jumbotron">
   <h1>ngContent</h1>
-  <p></p>
+  <p>Con ngContent puedes pasar "Contenido" a un componente sin tener que usar Input Properties.</p>
+</div>
+<p>
+  Los siguientes panels tienen definidos <code>ng-content</code> en el header y el body, el contenido de estos esta siendo asigando desde el componente padre.
+  <br>
+</p>
+  De este modo:
+  <ul>
+    <li><strong>En el hijo:</strong>
+      <br><code>&lt;ng-content selector=".p1Heading"&gt;&lt;/ng-content&gt;</code>
+      <br>Se crea el <code>ng-content</code> con un <code>selector</code> el cual se define como <code>queryStrings</code>(. para clases, # para id, etc.).
+      <br>Al definir un selector; En el componente padre se creara un elemento que tenga el mismo queryString que el selector, de este modo ese elemento sera el contenido de nuestro <code>ng-content</code>.
+    </li>
+    <li><strong>En el padre:</strong>
+      <br>Solo pasamos el contenido dentro de elementos que coincidan con el selector del ng-content.
+      <br>
+      <code>
+      &lt;app-ng-content&gt;
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="p1Heading"&gt;Panel 1&lt;/div&gt;
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="p1Body"&gt;
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h5&gt;Body&lt;/h5&gt;
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Este el el panel 1, dentro del boy se esta pasando HTML y no solo texto.
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/p&gt;
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+      <br>  &lt;/app-ng-content&gt;
+      </code>
+    </li>
+  </ul>
+  <p>
+    <strong>*</strong> Si el componente solo tiene un <code>ng-content</code> no sera necesario definir un <code>selector</code>.  Todo el contenido asignado desde el componente padre dentro del componente hijo se ira directo al <code>ng-content</code> unico.
+  </p>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <ng-content selector=".p1Heading"></ng-content> 
+      </div>
+      <div class="panel-body">
+        <ng-content select=".p1Body"></ng-content>
+      </div>
+    </div>
+  </div>
 </div>
