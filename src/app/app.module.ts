@@ -31,6 +31,12 @@ import { StylesComponent } from './building-reusable-components/styles/styles.co
 import { ViewEncapsulationComponent } from './building-reusable-components/view-encapsulation/view-encapsulation.component';
 import { NgContentComponent } from './building-reusable-components/ng-content/ng-content.component';
 import { NgContainerComponent } from './building-reusable-components/ng-container/ng-container.component';
+import { DirectivesComponent } from './directives/directives.component';
+import { NgIfComponent } from './directives/ng-if/ng-if.component';
+import { HiddenPropertyComponent } from './directives/hidden-property/hidden-property.component';
+import { NgSwitchCaseComponent } from './directives/ng-switch-case/ng-switch-case.component';
+import { NgForComponent } from './directives/ng-for/ng-for.component';
+import { NgForAndChangeDetectionComponent } from './directives/ng-for-and-change-detection/ng-for-and-change-detection.component';
 
 const appRoutes: Routes = [
   { path: "property-binding", component: PropertyBindingComponent },
@@ -47,6 +53,7 @@ const appRoutes: Routes = [
   { path: "building-reusable-components", component: BuildingReusableComponentsComponent },
   { path: "ng-content", component: NgContentComponent },
   { path: "ng-container", component: NgContainerComponent },
+  { path: "directives", component: DirectivesComponent },
   { path: "", component: WelcomeComponent },
   { path: "**", component: PageNotFoundComponent }
 ];
@@ -80,7 +87,13 @@ const appRoutes: Routes = [
     StylesComponent,
     ViewEncapsulationComponent,
     NgContentComponent,
-    NgContainerComponent
+    NgContainerComponent,
+    DirectivesComponent,
+    NgIfComponent,
+    HiddenPropertyComponent,
+    NgSwitchCaseComponent,
+    NgForComponent,
+    NgForAndChangeDetectionComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes, {

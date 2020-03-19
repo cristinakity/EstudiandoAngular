@@ -1,0 +1,81 @@
+<br />
+<br />
+<br />
+<div class="jumbotron">
+  <h1>ngIf</h1>
+  <p>Sirve para cuando queremos mostrar u ocultar parte de una pagina dependiendo de una condicion.</p>
+</div>
+<p>Las directivas se usan para modificar el DOM</p>
+Hay dos tipos de Directives:
+<ol>
+  <li><strong>Structural</strong>
+    <br>Modifican la estructura del DOM; Agregando o editando elementos del DOM.
+    <br>Se usa el prefijo * (asterisco).
+  </li>
+  <li><strong>Attribute</strong>
+    <br>Modifican los atributos del los elementos del DOM.
+  </li>
+</ol>
+<div class="row">
+  <div class="col-sm-6">
+    <button class="btn" [class.btn-danger]="!btn1.isOn" [class.btn-success]="btn1.isOn" (click)="onButtonClick(1)">
+      1={{ btn1.text }}
+    </button>
+    <br>
+    <br>
+    <div *ngIf="btn1.isOn" class="alert alert-success">El boton 1 esta encendido</div>
+    <div *ngIf="!btn1.isOn" class="alert alert-danger">El boton 1 esta apagado</div>
+  </div>
+  <div class="col-sm-6">
+    <button class="btn" [class.btn-danger]="!btn2.isOn" [class.btn-success]="btn2.isOn" (click)="onButtonClick(2)">
+      2={{ btn2.text }}
+    </button>
+    <br>
+    <br>
+    <div *ngIf="btn2.isOn then templateOn else templateOff"></div>
+    <ng-template #templateOn>
+      <div class="alert alert-success">
+        El boton 2 esta encendido
+      </div>
+    </ng-template>
+    <ng-template #templateOff>
+      <div class="alert alert-danger">
+        El boton 2 esta apagado
+      </div>
+    </ng-template>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-sm-6">
+    <p>En el primer ejemplo usamos: 
+      <code>
+        <br>&lt;div *ngIf="btn1.isOn" class="alert alert-success"&gt;El boton 1 esta encendido&lt;/div&gt;
+        <br>&lt;div *ngIf="!btn1.isOn" class="alert alert-danger"&gt;El boton 1 esta apagado&lt;/div&gt;
+      </code>      
+    </p>
+  </div>
+  <div class="col-sm-6">
+      <p>En el segundo ejemplo utilizamos otra forma de agregar el *ngIf y ademas agreagmos una condicion else.</p>
+      <code>
+        &lt;div *ngIf="btn2.isOn then templateOn else templateOff"&gt;&lt;/div&gt;
+        <br>&lt;ng-template #templateOn&gt;
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="alert alert-success"&gt;
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;El boton 2 esta encendido
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+        <br>&lt;/ng-template&gt;
+        <br>&lt;ng-template #templateOff&gt;
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="alert alert-danger"&gt;
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;El boton 2 esta apagado
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+        <br>&lt;/ng-template&gt;
+      </code>
+  </div>
+</div>
+<br>
+<p>Cuando el valor de ngIf es true el emento se agregara al DOM y cuando el valor es false el elemento se removera del DOM.</p>
+<p>Utilizando templates y else en *ngIf tenemos un codigo mas legible, debido a que en el primer ejemplo donde teniamos dos divs 
+  con ngIf no podemos saber si uno esta actuando como else de otro, no sin tener que revisar el codigo y entender la logica aplicada; 
+  Por lo tanto utilizando ngIf con else es una forma mas clara de aplicar la logica necesaria y en este caso seria una mejor practica,
+   igual nos ayudara si revisamos el codigo en el futuro y queremos entender que tratabamos de hacer.</p>
+<br>

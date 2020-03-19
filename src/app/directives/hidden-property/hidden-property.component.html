@@ -1,0 +1,45 @@
+<br />
+<br />
+<br />
+<div class="jumbotron">
+  <h1>Hidden Property</h1>
+  <p>Es la propiedad hidden del DOM, la cual oculta un elemento.</p>
+</div>
+<p>Al utlizar <code>[hidden]</code> el elemento seguira en el DOM pero oculto.</p>
+<div class="row">
+  <div class="col-sm-6">
+    <button class="btn" [class.btn-danger]="!isOn" [class.btn-success]="isOn" (click)="onButtonClick()">
+      {{ text }}
+    </button>
+    <br>
+    <br>
+    <div [hidden]="!isOn" class="alert alert-success">El boton 1 esta encendido</div>
+    <div [hidden]="isOn" class="alert alert-danger">El boton 1 esta apagado</div>
+  </div>
+  <div class="col-sm-6">
+    <p>En el siguiente ejemplo estamos utlizando <code>[hidden]</code> property del elemento para ocultarlo.
+      <br>
+      <br>
+      <code>&lt;div [hidden]="!isOn" class="alert alert-success"&gt;El boton 1 esta encendido&lt;/div&gt;
+        <br> &lt;div [hidden]="isOn" class="alert alert-danger"&gt;El boton 1 esta apagado&lt;/div&gt;
+      </code>
+      <br>
+      <br>Al final el resultado es el mismo que con <code>*ngIf</code>, pero en este caso ambos divs estaran en el DOM, solo que uno oculto.
+    </p>
+  </div>
+  <p>
+    Para saber cuando utlizar <code>*ngIf</code> y cuando <code>[hidden]</code> property, sera necesario identificar el tamaño del 
+    arbol del DOM, por lo general si tenemos un DOM tree pequeño, no hay diferencia cual opcion usar, la que sea de nuestra 
+    preferencia; Pero en el caso de tener DOM tree muy extenso y que sea muy costoso para el browser renderizarlo, es mejor 
+    utlizar <code>*ngIf</code>, de este modo le quitamos trabajo al browser aligerando el DOM debido a que no tendra codigo oculto en el browser.
+    <br>
+    <br>Hay ocaciones donde renderizar DOM en base a los cambios en Angular puede llegar a costarnos muchos recursos.
+    Angular esta trabajando aun para los elementos hidden u ocultos, entonces en estos casos hay que tomar en el 
+    tree DOM y como es que se evalua el codigo de Angular por eso en estos casos es mejor <code>*ngIf</code>, removiendo con este 
+    partes del DOM que no necesitamos estar renderizando, sin embargo puede haber excepciones donde sea mas conveniente utilizar 
+    <code>[hidden]</code> property debido a que esa parte del DOM que es muy costasa de renderizar se estara ocultando o mostrando 
+    seguido mediante un boton por ejemplo y no va ha cambiar, si no cambia no impacta al momento de renderizar, pero si puede 
+    impactar si utilizamos en *ngIf tener que generar todo el DOM otra vez, en lugar de solo mostrarlo y ocultarlo.
+  </p>
+  <br>
+</div>

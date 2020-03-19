@@ -1,0 +1,24 @@
+<br />
+<br />
+<br />
+<div class="jumbotron">
+  <h1>ngFor</h1>
+  <p>Sirve para iterar elementos en el DOM.</p>
+</div>
+<p>
+  Se utiliza <code>ngFor</code> cuando tenemos una lista de objetos y queremos iterar la lista para mostrar todos los objetos.
+  <br><code>ngFor</code>  cuenta con varios export values como <code>index</code>, que nos ayudan a tener algunas caracteristicas extras.
+  <br>Podemos ver la lista de Local Variables para <code>ngFor</code> en el siguiente  <a href="https://angular.io/api/common/NgForOf#description">enlace</a>.
+</p>
+Haciendo uso de <code>*ngFor</code> se enlistas los exports values:
+<ul>
+  <li *ngFor="let ev of exportsValues">
+    {{ev.name}}: {{ev.type}}: {{ev.description}}
+  </li>
+</ul>
+Promedio de alumnos
+<ul>
+  <li *ngFor="let alumno of alumnos; index as i">
+    {{i}} - {{alumno.nombre}} : {{alumno.promedio}}
+  </li>
+</ul>

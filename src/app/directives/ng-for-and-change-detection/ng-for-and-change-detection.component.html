@@ -1,0 +1,25 @@
+<br />
+<br />
+<br />
+<div class="jumbotron">
+  <h1>ngFor & change detection</h1>
+  <p>Cada vez que exista algun cambio la lista que esta siendo utilizada por <code>*ngFor</code> este cambio se vera reflejado gracias al change detection de Angular.</p>
+</div>
+<p>
+  En el siguiente ejemplo veremos el change detection en accion, cada vez que se agrega, modifica o remueve un nuevo elemento;  El change detection actuara y mostrara los cambios.
+</p>
+<br>
+Alumno: <input [(ngModel)]="alumno.nombre" type="text"> Promedio: <input [(ngModel)]="alumno.promedio" type="number"> &nbsp; <button class="btn btn-success" (click)="onAdd()">+</button>
+<br>
+<div class="alert alert-danger" *ngIf="showAlert">
+  Por favor escriba un nombre y un promedio.
+</div>
+<br>
+Promedio de alumnos
+<ul>
+  <li *ngFor="let alumno of alumnos; index as i">
+    {{i}} - {{alumno.nombre}} : {{alumno.promedio}} <button class="btn btn-danger btn-sm" (click)="onRemove(i)">X</button>
+  </li>
+</ul>
+<br>
+<br>

@@ -1,0 +1,31 @@
+<br />
+<br />
+<br />
+<div class="jumbotron">
+  <h1>ngSwitchCase</h1>
+  <p>Es como el Switch case que se utliza en muchos lenguajes de programacion. 
+    A diferencia del <code>*ngIf</code> que solo evalua true o false, <code>[ngSwitch]</code> sirve para evaluar multiples opciones.
+  </p>
+</div>
+<ul class="nav nav-pills">
+  <li [class.active]="opcion == 'iron-man'"><a (click)="opcion = 'iron-man'">Iron-man</a></li>
+  <li [class.active]="opcion == 'spiderman'"><a (click)="opcion = 'spiderman'">Spiderman</a></li>
+  <li [class.active]="opcion == 'hulk'"><a (click)="opcion = 'hulk'">Hulk</a></li>
+</ul>
+<div [ngSwitch]="opcion">
+  <div *ngSwitchCase="'iron-man'">
+    <h2>Iron-man</h2>
+    <img width="50%" class="img-fluid img-thumbnail" src="https://i.imgur.com/Iqr8lBQ.jpg" alt="" srcset="">
+  </div>
+  <div *ngSwitchCase="'spiderman'">
+    <h2>Spiderman</h2>
+    <img width="50%" class="img-fluid img-thumbnail"  src="https://i.imgur.com/1mJhkyl.png" alt="" srcset="">
+  </div>
+  <div *ngSwitchCase="'hulk'">
+    <h2>Hulk</h2>
+    <img width="50%" class="img-fluid img-thumbnail" src="https://i.imgur.com/IFyhVzy.jpg?1" alt="" srcset="">
+  </div>
+  <div *ngSwitchDefault>Ningun super heroe</div>
+</div>
+<br>
+<br>
