@@ -1,0 +1,143 @@
+<br />
+<br />
+<br />
+<div class="jumbotron">
+  <h1>ngStyle</h1>
+  <p>Es una directiva de atributos, osea que se utiliza para modificar atributos de los elementos del DOM.
+    Sirve para agregar multiples estilos a un elemento.</p>
+</div>
+<p>
+  A diferencia de <code>[style.estiloDelDOM]</code> property, <code>[ngStyle]</code> directive nos permite agregar
+  multiples estilos, en el caso de la propiedad style tenemos que escribirla n veces cuando tenemos multiples estilos
+  aplicadas a un elemento.
+</p>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">Con la propiedad <code>[style]</code></div>
+      <div class="panel-body">
+        <p [style.color]="'gray'" 
+        [style.backgroundColor]="'lightgreen'"
+        [style.font-size]="'30px'">
+        {{ text }}</p>
+        <p [style.color]="successColor" 
+        [style.backgroundColor]="'skyblue'"
+        [style.font-size]="'20px'">
+        {{ text }}</p>
+        <p [style.color]="isSuccess ? successColor : dangerColor" 
+        [style.backgroundColor]="'pink'"
+        [style.font-size]="'10px'">
+        {{ text }}</p>
+        <p [style.color]="'pink'" 
+        [style.backgroundColor]="'red'"
+        [style.font-size]="'16px'">
+        {{ text }}</p>
+
+        <img [attr.src]="imageLink" [title]="'width + %'" [style.width]="width + '%'" />
+        <img [src]="imageLink" [attr.title]="'width + px'" [style.width]="width + 'px'"  [style.height]="width + 'px'" />
+        <br>
+        <br>
+        <table class="table table-bordered">
+          <thead [style.backgroundColor]="theadBackgroundColor" [style.color]="'gray'" [style.font-size]="'30px'">
+            <tr>
+              <th [attr.colspan]="colSpan">Full Header</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Row 1 - Column 1 </td>
+              <td>Row 1 - Column 2 </td> 
+            </tr>
+            <tr>
+              <td>Row 2 - Column 1 </td>
+              <td>Row 2 - Column 2 </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">Con la directiva <code>[ngStyle]</code></div>
+      <div class="panel-body">
+        <p [ngStyle]="{
+          'color':'gray',
+          'backgroundColor':'lightgreen',
+          'font-size':'30px'
+        }"> {{ text }}</p>
+        <p [ngStyle]="{
+          'color':successColor,
+          'backgroundColor':'skyblue',
+          'font-size':'20px'
+        }"> {{ text }}</p>
+        <p [ngStyle]="{
+          'color':isSuccess ? successColor : dangerColor,
+          'backgroundColor':'pink',
+          'font-size':'10px'
+        }">{{ text }}</p>
+        <p [ngStyle]="{
+          'color':'pink',
+          'backgroundColor':'red',
+          'font-size':'16px'
+        }">{{ text }}</p>
+        
+        <!-- <img [attr.src]="imageLink" [title]="'width + %'" [style.width]="width + '%'" /> -->
+        <img [attr.src]="imageLink" [title]="'width + %'" [ngStyle]="{'width':width + '%'}" />
+        <!-- <img [src]="imageLink" [attr.title]="'width + px'" [style.width]="width + 'px'"  [style.height]="width + 'px'" /> -->
+        <img [src]="imageLink" [attr.title]="'width + px'" [ngStyle]="{'width':width + 'px', 'height':width + 'px'}"/>
+        <br>
+        <br>
+        <table class="table table-bordered">
+            <!-- <thead [style.backgroundColor]="theadBackgroundColor" [style.color]="'gray'" [style.font-size]="'30px'"> -->
+            <thead [ngStyle]="{'backgroundColor': theadBackgroundColor, 'color':'gray', 'font-size':'30px'}">
+            <tr>
+              <th [attr.colspan]="colSpan">Full Header</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Row 1 - Column 1 </td>
+              <td>Row 1 - Column 2 </td> 
+            </tr>
+            <tr>
+              <td>Row 2 - Column 1 </td>
+              <td>Row 2 - Column 2 </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">Ejemplo de codigo agreando uno por uno los styles</div>
+      <div class="panel-body">
+        <code>
+          &lt;p
+        <br>[style.color]="'gray'" 
+        <br>[style.backgroundColor]="'lightgreen'"
+        <br>[style.font-size]="'30px'"&gt;
+        <br>{{'\{\{text\}\}'}} &lt;/p&gt;
+        </code>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">Ejemplo de codigo agreagando todos los styles utilizando la directiva ngStyle</div>
+      <div class="panel-body">
+        <code>
+          &lt;p &#91;ngStyle&#93;="&#123;
+            <br>'color':'gray',
+            <br>'backgroundColor':'lightgreen',
+            <br>'font-size':'30px'
+            &#125;"&gt;
+        <br>{{'\{\{text\}\}'}} &lt;/p&gt;
+        </code>
+      </div>
+    </div>
+  </div>
+</div>

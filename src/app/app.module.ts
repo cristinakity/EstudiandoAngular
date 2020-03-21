@@ -37,6 +37,12 @@ import { HiddenPropertyComponent } from './directives/hidden-property/hidden-pro
 import { NgSwitchCaseComponent } from './directives/ng-switch-case/ng-switch-case.component';
 import { NgForComponent } from './directives/ng-for/ng-for.component';
 import { NgForAndChangeDetectionComponent } from './directives/ng-for-and-change-detection/ng-for-and-change-detection.component';
+import { NgForAndTrackByComponent } from './directives/ng-for-and-track-by/ng-for-and-track-by.component';
+import { TheLeadingAsteriskComponent } from './directives/the-leading-asterisk/the-leading-asterisk.component';
+import { NgClassComponent } from './directives/ng-class/ng-class.component';
+import { NgStyleComponent } from './directives/ng-style/ng-style.component';
+import { SafeTraversalOperatorComponent } from './directives/safe-traversal-operator/safe-traversal-operator.component';
+import { CreatingCustomDirectivesComponent } from './directives/creating-custom-directives/creating-custom-directives.component';
 
 const appRoutes: Routes = [
   { path: "property-binding", component: PropertyBindingComponent },
@@ -93,7 +99,13 @@ const appRoutes: Routes = [
     HiddenPropertyComponent,
     NgSwitchCaseComponent,
     NgForComponent,
-    NgForAndChangeDetectionComponent
+    NgForAndChangeDetectionComponent,
+    NgForAndTrackByComponent,
+    TheLeadingAsteriskComponent,
+    NgClassComponent,
+    NgStyleComponent,
+    SafeTraversalOperatorComponent,
+    CreatingCustomDirectivesComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes, {

@@ -1,0 +1,40 @@
+<br />
+<br />
+<br />
+<div class="jumbotron">
+  <h1>ngClass</h1>
+  <p>Es una directiva de atributos, osea que se utiliza para modificar atributos de los elementos del DOM.  Sirve para agregar multiples clases a un elemento.</p>
+</div>
+<p>
+  A diferencia de <code>[class.className]</code> property, <code>[ngClass]</code> directive nos permite agregar multiples clases, en el caso de la propiedad class tenemos que escribirla n veces cuando tenemos multiples clases aplicadas a un elemento.
+</p>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">Ejemplo con <code>[class.className]</code></div>
+      <div class="panel-body">
+        <button class="btn" 
+        [class.btn-danger]="!btn1IsOn" 
+        [class.btn-success]="btn1IsOn" 
+        (click)="btn1IsOn = !btn1IsOn">
+          {{ btn1IsOn ? "ON" : "OFF"}}
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading"> Ejemplo con <code>[ngClass]</code></div>
+      <div class="panel-body">
+        <button class="btn" 
+        [ngClass]="{
+            'btn-danger': !btn2IsOn,
+            'btn-success': btn2IsOn
+          }"
+        (click)="btn2IsOn = !btn2IsOn">
+          {{ btn2IsOn ? "ON" : "OFF"}}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

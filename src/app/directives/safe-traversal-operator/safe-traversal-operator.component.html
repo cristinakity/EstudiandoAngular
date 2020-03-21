@@ -1,0 +1,51 @@
+<br />
+<br />
+<br />
+<div class="jumbotron">
+  <h1>Safe traversal operator</h1>
+  <p>Es el operador ? (signo de cierre de interrogacion).  Se usa para validar si un objeto tiene datos, osea que no venga null.</p>
+</div>
+<p>
+  Si tenemos el objeto:
+  <br>
+  <code>
+    persona &#123; 
+    <br>&nbsp;&nbsp;nombre: 'Juan Perez',
+    <br>&nbsp;&nbsp;edad: 30,
+    <br>&nbsp;&nbsp;direccion: null
+    <br>&#125;
+  </code>
+  <br>
+  <br>Direccion representa otro objeto, pero en este caso viene null.
+  <br>Al intentar utilizar string interpolation <code>{{'\{\{ persona.direccion.calle \}\}'}}</code> tendremos un error de compilacion porque <code>direccion</code> es null por lo tanto <code>.calle</code> no existe.
+  <br>
+  <br>En cambio si el objeto tuviera con datos:
+  <br>
+  <code>
+    persona &#123; 
+    <br>&nbsp;&nbsp;nombre: 'Juan Perez',
+    <br>&nbsp;&nbsp;edad: 30,
+    <br>&nbsp;&nbsp;direccion: &#123; 
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;'calle':'Avenida Siempre viva'
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;'numero':'1029'
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;'cp':'70324'
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;'ciudad':'Mexico'
+    <br>&nbsp;&nbsp;&#125;
+    <br>&#125;
+  </code>
+  <br>Entonces esta instrucion <code>{{'\{\{ persona.direccion.calle \}\}'}}</code> no nos arrojaria ningun error.
+</p>
+<br>
+<p>
+  Pero supongamos que <code>direccion</code> es <code>null</code>, hay dos forma de arreglarlo:
+</p>
+<ol>
+  <li><strong>Utilizando <code>*ngIf</code></strong>:
+    Validando lo siguiente <code> *ngIf="persona.direccion"</code>
+  </li>
+  <li><strong>Utilizando el safe traversal operator <code>?</code></strong>:
+    Lo cal es mas simple <code>{{ persona.direccion<strong>?</strong>.calle }}</code>
+  </li>
+</ol>
+<br>
+<br>

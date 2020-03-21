@@ -1,0 +1,61 @@
+<br />
+<br />
+<br />
+<div class="jumbotron">
+  <h1>ngFor & trackby</h1>
+  <p>trackBy es una for ma de decirle a Angular que valide los cambios del ngFor en base al id u otro campo de la lista,
+    en lugar de validarlos por la referencia que tiene el objeto en memoria, de este modo cada vez que creemos una nueva
+    lista no tendra que volver a renderizar todos los elmentos html.</p>
+</div>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">Sin trackBy</div>
+      <div class="panel-body">
+        <button class="btn btn-primary" (click)="loadTeachers()">Cargar Maestros</button>
+        <br>
+        <br>
+        <div *ngIf="teachers.length>0 then showTeachers else noTeachers"></div>
+        <ng-template #showTeachers>
+          Lista de Maestros:
+          <br>
+          <ul>
+            <li *ngFor="let teacher of teachers">
+              {{teacher.name}}: {{teacher.class}}
+            </li>
+          </ul>
+        </ng-template>
+        <ng-template #noTeachers>
+          No hay maestros.
+        </ng-template>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">Con trackBy</div>
+      <div class="panel-body">
+        <button class="btn btn-primary" (click)="loadAlumns()">Cargar Alumnos</button>
+        <br>
+        <br>
+        <div *ngIf="alumns.length>0 then showAlumns else noAlumns"></div>
+        <ng-template #showAlumns>
+          Lista de alumnos:
+          <br>
+          <ul>
+            <li *ngFor="let alumn of alumns; trackBy: trackAlumns">
+              {{alumn.name}}: {{alumn.finalGrade}}
+            </li>
+          </ul>
+        </ng-template>
+        <ng-template #noAlumns>
+          No hay alumnos.
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>
+<p>
+  Para ver como esta funcionando esta parte, sera necesario inspeccionar la lista (click secundario inspeccionar) y hacer click en el boton Cargar Maestros y Cargar Alumnos, asi podremos ver que cada vez que se hacemos click en cargar Maestros los elementos li se vuelven a renderizar; En cambio cuando damos click en cargar alumnos este no se renderiza cada vez porque agregamos trackBy en el ngFor.
+</p>
+<br>
