@@ -43,6 +43,7 @@ import { NgClassComponent } from './directives/ng-class/ng-class.component';
 import { NgStyleComponent } from './directives/ng-style/ng-style.component';
 import { SafeTraversalOperatorComponent } from './directives/safe-traversal-operator/safe-traversal-operator.component';
 import { CreatingCustomDirectivesComponent } from './directives/creating-custom-directives/creating-custom-directives.component';
+import { InputFormatDirective } from './shared/directives/input-format.directive';
 
 const appRoutes: Routes = [
   { path: "property-binding", component: PropertyBindingComponent },
@@ -105,7 +106,8 @@ const appRoutes: Routes = [
     NgClassComponent,
     NgStyleComponent,
     SafeTraversalOperatorComponent,
-    CreatingCustomDirectivesComponent
+    CreatingCustomDirectivesComponent,
+    InputFormatDirective
   ],
   imports: [
     RouterModule.forRoot(appRoutes, {

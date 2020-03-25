@@ -5,3 +5,80 @@
   <h1>Creating Custome Directives</h1>
   <p>En Angular es posible crear Directivas propias o custom.</p>
 </div>
+<p>
+  Podemos crear custom directives con Angular CLI utilizando el siguiente comando:
+  <br><code>
+    ng g d directiveName
+  </code>
+</p>
+<p>
+  Debemos importar decorator <code>HostListener</code> que nos permite suscribirnos a un evento del DOM del elemento que
+  este usando la directiva.
+  <br>
+  <br>Ejemplo para suscribirnos al evento <code>blur</code> de elemento tendriamos que utilizar la siguiente instruccion:
+  <br>
+  <code>
+    @HostListener('blur') onBlur()&#123; Console.log('Elemento perdio el foco.') &#125;
+  </code>
+  <br>
+  <br>Para obtener el valor del elemento despues de quitarle el foco y darle formato a este valor, primero debemo injectar
+  una variable de tipo <code>ElementRef</code> en el constructor de la directiva.  Esto nos da acceso al objeto del DOM.
+  <br><code>constructor(private el:ElementRef)&#123;&#125; </code>
+  <br>Para esto debemos importar <code>ElementRef</code> desde <code>@angular/core</code>
+  <br>  
+  <br>Dentro de la funcion <code>OnBlur</code> para acceder al valor del elemento del DOM en el que se esta implementando la directiva,
+  utilizamos la siguiente instruccion:
+  <br><code>let value = this.el.nativeElement.value;</code>
+  <br><code>this.el.nativeElement</code> no acceso al elemento del DOM junto con todas sus propiedades.
+  <br>Una vez obtenido el valor en la variable <code>value</code>, ahora solo resta aplicarle el formato deseado,
+  en este caso <code>lowercase</code>
+  <br><code>
+    let value: string = this.el.nativeElement.value;
+    <br> this.el.nativeElement.value = value.toLowerCase();
+  </code>
+  <br>Utilizamos <code>: string</code> despues de value para definir value de tipo string y asi poder utilizar los metodos de string, 
+  como por ejemplo <code>.toLowerCase()</code>
+  <br>De este modo al escribir un texto en mayusculas y perder el foco, el texto sera convertido a minusculas.
+</p>
+<p>
+  Podemos pasarle parametros a la directiva utilizando input properties:
+  <br><code>
+    @Input('format') format:string;
+  </code>
+  <br>He implementarla de la siguiente manera:
+  <br><code>
+    &lt;input type="text"  appInputFormat [format]="'uppercase'" /&gt;
+  </code>
+</p>
+<p>
+  En cambio si queremos implementar algo asi:
+  <br><code>    
+    &lt;input type="text"  [appInputFormat]="'uppercase'" /&gt;
+  </code>
+  <br>Solo sera necesario que el alias del Input sea igual al selector de la directiva:
+  <br><code>
+    @Input('appInputFormat') format:string;
+  </code>
+</p>
+<p>Despues ppodemos utlizar <code>this.format</code> dentro del evento <code>onBlur()</code> y validar le tipo de transformacion 
+  que le aplicaremos al texto.
+  <br>
+  <code>
+    if(this.format == "uppercase")&#123;
+    <br>&nbsp;&nbsp;this.el.nativeElement.value = value.toLowerCase();
+    <br>&#125;else&#123;
+    <br>&nbsp;&nbsp;this.el.nativeElement.value = value.toUpperCase();
+    <br>&#125;
+  </code>
+</p>
+<br>
+<div class="form">
+  <div class="form-group col-md-6">
+    <label for="inputFormat1">Input utlizando la directiva <code>appInputFormat</code></label>
+    <input class="form-control" id="inputFormat1" type="text" [appInputFormat]="'uppercase'" />
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br>
