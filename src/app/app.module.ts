@@ -44,6 +44,12 @@ import { NgStyleComponent } from './directives/ng-style/ng-style.component';
 import { SafeTraversalOperatorComponent } from './directives/safe-traversal-operator/safe-traversal-operator.component';
 import { CreatingCustomDirectivesComponent } from './directives/creating-custom-directives/creating-custom-directives.component';
 import { InputFormatDirective } from './shared/directives/input-format.directive';
+import { TemplateDrivenFormsComponent } from './template-driven-forms/template-driven-forms.component';
+import { BuildingBootstrapFormComponent } from './template-driven-forms/building-bootstrap-form/building-bootstrap-form.component';
+import { TypesOfFormsComponent } from './template-driven-forms/types-of-forms/types-of-forms.component';
+import { NgModelComponent } from './template-driven-forms/ng-model/ng-model.component';
+import { AddingVaidationComponent } from './template-driven-forms/adding-vaidation/adding-vaidation.component';
+import { SpecificValidationErrorsComponent } from './template-driven-forms/specific-validation-errors/specific-validation-errors.component';
 
 const appRoutes: Routes = [
   { path: "property-binding", component: PropertyBindingComponent },
@@ -61,6 +67,7 @@ const appRoutes: Routes = [
   { path: "ng-content", component: NgContentComponent },
   { path: "ng-container", component: NgContainerComponent },
   { path: "directives", component: DirectivesComponent },
+  { path: "template-driven-forms", component: TemplateDrivenFormsComponent },
   { path: "", component: WelcomeComponent },
   { path: "**", component: PageNotFoundComponent }
 ];
@@ -107,7 +114,13 @@ const appRoutes: Routes = [
     NgStyleComponent,
     SafeTraversalOperatorComponent,
     CreatingCustomDirectivesComponent,
-    InputFormatDirective
+    InputFormatDirective,
+    TemplateDrivenFormsComponent,
+    BuildingBootstrapFormComponent,
+    TypesOfFormsComponent,
+    NgModelComponent,
+    AddingVaidationComponent,
+    SpecificValidationErrorsComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes, {

@@ -1,0 +1,40 @@
+<br />
+<br />
+<br />
+<div class="jumbotron">
+  <h1>Building a bootstrap form</h1>
+  <p>Como crear un formulario utilizando los estilos de Bootstrap.</p>
+</div>
+<p>
+  Para construir formularios con Bootstrap tendremos que utilizar la siguiente estructura:
+</p>
+<ul>
+  <li><strong>div.group-form</strong>:
+    Un <code>div</code> con la clase <code>group-form</code>
+  </li>
+  <ul>
+    <li><strong>label[for="idInput"]</strong>:
+      Un label con el atributo <code>for</code> seguido el id del input, esto hara que al darle click al label el foco
+      se ponga en el input.
+    </li>
+    <li><strong>input.form-control[id="idInput"][type="text"]</strong>:
+      Un input con la clase <code>form-control</code> esta hara el input mas "bonito" visualmente, el id deberia ser el
+      mismo que en el <code>for</code> del <code>label</code>.
+    </li>
+  </ul>
+</ul>
+<form action="">
+  <div class="group-form">
+    <label for="name">Nombre</label>
+    <input type="text" class="form-control" id="name">
+  </div>
+  <div class="group-form">
+    <label for="comment">Comentarios</label>
+    <textarea name="" id="comment" cols="30" rows="10" class="form-control"></textarea>
+  </div>
+  <br>
+  <button class="btn btn-success" type="submit">Guardar</button>
+</form>
+<br>
+<br>
+<br>
